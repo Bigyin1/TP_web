@@ -1,0 +1,32 @@
+{% load static %}
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+        <a class="navbar-brand" href="/">AskAparin</a>
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar"
+                aria-expanded="false" aria-controls="navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="nav navbar-nav d-flex flex-row mr-auto ml-2 form-inline">
+                <input class="form-control search-q mb-2 mr-sm-2 mb-lg-0" style="font-family: FontAwesome" type="search"
+                       placeholder="&#xF002; Search" aria-label="Search">
+                <button class="btn btn-success mb-2 mb-lg-0" type="submit">Ask!</button>
+            </form>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <div class="nav-user m-2 mr-4 d-flex">
+                        <img class="avatar" src="{% static 'img/no_avatar.png' %}" alt="">
+                        <div class="nav-user-info">
+                            <div class="user-name">Dr.Pepper</div>
+                            <div class="user-activ mt-2">
+                                <a class="mr-2" href="#">settings</a>
+                                <a href="#">log out</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <hr>
