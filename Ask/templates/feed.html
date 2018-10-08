@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/feed.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="feed-top ml-2">
+        <span class="mr-5">New questions</span>
+        <a href="">Hot questions</a>
+    </div>
+    <div class="container ml-2">
+        <div class="row post pl-0">
+            <div class="col-2">
+                <div class="mb-5"><img class="post-avatar" src="{% static "img/no_avatar.png" %}" alt=""></div>
+                <div class="rate">
+                    <span class="mr-1"> 5</span>
+                    <i class="fa fa-plus mr-1" aria-hidden="true"></i>
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="col-10">
+                <h3><a href="#">How to build a moon park ?</a></h3>
+                <div class="short-descr">Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Commodi enim praesentium reprehenderit!
+                </div>
+                <div class="post-bottom mt-2">
+                    <a class="mr-5" href="#">answer(3)</a>
+                    <span>Tags: </span>
+                    <a class="tag" href="">black-jack</a>
+                    <a class="tag" href="">bender</a>
+                </div>
+            </div>
+        </div>
+        <div class="row post pl-0">
+            <div class="col-2">
+                <div class="mb-5"><img class="post-avatar" src="{% static "img/no_avatar.png" %}" alt=""></div>
+                <div class="rate">
+                    <span class="mr-1"> 5</span>
+                    <i class="fa fa-plus mr-1" aria-hidden="true"></i>
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="col-10">
+                <h3><a href="#">How to build a moon park ?</a></h3>
+                <div class="short-descr">Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Commodi enim praesentium reprehenderit!
+                </div>
+                <div class="post-bottom mt-2">
+                    <a class="mr-5" href="#">answer(3)</a>
+                    <span>Tags: </span>
+                    <a class="tag" href="">black-jack</a>
+                    <a class="tag" href="">bender</a>
+                </div>
+            </div>
+        </div>
+        <div class="row post pl-0">
+            <div class="col-2">
+                <div class="mb-5"><img class="post-avatar" src="{% static "img/no_avatar.png" %}" alt=""></div>
+                <div class="rate">
+                    <span class="mr-1"> 5</span>
+                    <i class="l fa fa-plus mr-1" aria-hidden="true"></i>
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="col-10">
+                <h3><a href="#">How to build a moon park ?</a></h3>
+                <div class="short-descr">Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Commodi enim praesentium reprehenderit!
+                </div>
+                <div class="post-bottom mt-2">
+                    <a class="mr-5" href="#">answer(3)</a>
+                    <span>Tags: </span>
+                    <a class="tag" href="">black-jack</a>
+                    <a class="tag" href="">bender</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav aria-label="Page navigation example" class="ml-2">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">...</a></li>
+            <li class="page-item"><a class="page-link" href="#">54</a></li>
+        </ul>
+    </nav>
+{% endblock %}

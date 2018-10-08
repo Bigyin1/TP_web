@@ -1,0 +1,35 @@
+.feed-top{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.feed-top > span{
+    font-size: 25px;
+}
+
+.feed-top > a{
+    text-decoration: underline;
+}
+
+.post-avatar{
+    height: 55px;
+    border-radius: 10%;
+}
+
+.post{
+    border: 1px grey solid;
+    padding: 12px;
+    margin-bottom: 25px;
+}
+
+.rate > i{
+    cursor: pointer;
+}
+
+.short-descr{
+    margin-right: 30%;
+}
+
+.tag{
+    margin-left: 8px;
+}
