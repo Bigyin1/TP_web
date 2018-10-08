@@ -3,12 +3,13 @@
     margin-bottom: 15px;
 }
 
-.feed-top > span{
+.feed-top  span{
     font-size: 25px;
 }
 
-.feed-top > a{
+.feed-top  a{
     text-decoration: underline;
+    color: darkblue;
 }
 
 .post-avatar{
@@ -22,12 +23,17 @@
     margin-bottom: 25px;
 }
 
+.post  a{
+    text-decoration: underline;
+    color: darkblue;
+}
+
 .rate > i{
     cursor: pointer;
 }
 
 .short-descr{
-    margin-right: 30%;
+    margin-right: 20%;
 }
 
 .tag{
