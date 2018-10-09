@@ -14,38 +14,50 @@
             <div class="form-group row">
                 <label for="Title" class="col-sm-3 col-form-label">Login</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="Title">
+                    <input type="text" class="form-control is-invalid" id="Title" required>
+                    <div class="invalid-feedback">
+                        This Login is already registered.
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="Text" class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-5">
-                    <input type="email" class="form-control" id="Text">
+                    <input type="email" class="form-control is-invalid" id="Text" required>
+                    <div class="invalid-feedback">
+                        This Email is already registered.
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Tags" class="col-sm-3 col-form-label">NickName</label>
+                <label for="Tags1" class="col-sm-3 col-form-label">NickName</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="Tags">
+                    <input type="text" class="form-control is-invalid" id="Tags1" required>
+                    <div class="invalid-feedback">
+                        This NickName is already registered.
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Tags" class="col-sm-3 col-form-label">Password</label>
+                <label for="Tags2" class="col-sm-3 col-form-label">Password</label>
                 <div class="col-sm-5">
-                    <input type="password" class="form-control" id="Tags">
+                    <input type="password" class="form-control" id="Tags2" required>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Tags" class="col-sm-3 col-form-label">Repeat Password</label>
+                <label for="Tags3" class="col-sm-3 col-form-label">Repeat Password</label>
                 <div class="col-sm-5">
-                    <input type="password" class="form-control" id="Tags">
+                    <input type="password" class="form-control is-invalid" id="Tags3" required>
+                    <div class="invalid-feedback">
+                        Passwords are not identical.
+                    </div>
                 </div>
             </div>
 
             <div class="form-group row">
                 <label class="col-sm-3" for="exampleFormControlFile1">Upload Avatar</label>
                 <div class="col-sm-5">
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
                 </div>
 
             </div>

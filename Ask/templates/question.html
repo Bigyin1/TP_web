@@ -7,7 +7,7 @@
 
 {% block content %}
     <div class="container mr-2 pr-3">
-        <div class="row details-post pl-0">
+        <div class="row details-post pb-3 border-bottom">
             <div class="col-8 col-lg-2">
                 <div class="mb-2 mb-lg-3"><img class="details-post-avatar" src="{% static "img/no_avatar.png" %}"
                                                alt=""></div>
@@ -34,7 +34,6 @@
                 </div>
             </div>
         </div>
-        <hr>
         <div class="row details-post-comment">
             <div class="col-8 col-lg-2">
                 <div class="mb-2 mb-lg-3"><img class="details-post-comment-avatar"
@@ -87,8 +86,7 @@
                 </div>
             </div>
         </div>
-        <hr>
-        <form class="mt-4" action="#" method="post">
+        <form class="mt-4 pt-4 pb-4 border-top" action="#" method="post">
             <div class="form-group row">
                 <div class="col-sm-12">
                     <textarea rows="3" placeholder="Enter your answer here" type="password" class="form-control"

@@ -2,6 +2,8 @@ body{
     font-family: FontAwesome;
 }
 
+
+
 a.navbar-brand{
     font-size: 30px;
     font-weight: bold;
@@ -17,7 +19,6 @@ a.navbar-brand{
 .nav-user a{
     text-decoration: underline;
 }
-
 
 
 hr{
