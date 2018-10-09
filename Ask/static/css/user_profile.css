@@ -1,0 +1,14 @@
+.settings-form{
+    margin-top: 5%;
+}
+
+.settings-form-top{
+    font-size: 25px;
+}
+
+.settings-form-avatar{
+    height: 92px;
+    border-radius: 10%;
+    margin-bottom: 12px;
+}
+
