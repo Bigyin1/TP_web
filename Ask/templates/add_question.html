@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/question_form.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="add mt-3">
+        <div class="add-top ">
+            <span class="m">New questions</span>
+        </div>
+        <form class="add-form" action="#" method="post">
+            <div class="form-group row">
+                <label for="Title" class="col-sm-2 col-form-label">Title</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Title">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Text" class="col-sm-2 col-form-label">Text</label>
+                <div class="col-sm-10">
+                    <textarea rows="10"  type="password" class="form-control" id="Text"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Tags" class="col-sm-2 col-form-label">Tags</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Tags">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                    <input type="submit" value="Ask it" class="btn btn-success">
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
