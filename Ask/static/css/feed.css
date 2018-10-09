@@ -28,11 +28,11 @@
     color: darkblue;
 }
 
-.rate > i{
+.post-rate > i{
     cursor: pointer;
 }
 
-.short-descr{
+.post-short-description{
     margin-right: 20%;
 }
 
