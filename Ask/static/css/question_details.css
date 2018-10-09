@@ -1,0 +1,21 @@
+.details-post{
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.details-post-comment{
+    margin-top: 3%;
+    margin-bottom: 4%;
+    border: 1px grey solid;
+    padding: 12px;
+}
+
+.details-post-avatar{
+    height: 85px;
+    border-radius: 10%;
+}
+
+.details-post-comment-avatar{
+    height: 65px;
+    border-radius: 10%;
+}
