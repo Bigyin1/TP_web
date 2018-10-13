@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'css/feed.css' %}">
+    <link rel="stylesheet" href="{% static 'Ask/css/feed.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="feed-top ml-2">
+    <div class="feed-top">
         <span class="mr-5 d-inline-block">New questions</span>
         <a class="d-inline-block" href="">Hot questions</a>
     </div>
-    <div class="container ml-2">
-        <div class="row post pl-0">
+    <div class="container ">
+        <div class="row post border">
             <div class="col-8 col-lg-2">
-                <div class="mb-2 mb-lg-5"><img class="post-avatar" src="{% static "img/no_avatar.png" %}" alt=""></div>
+                <div class="mb-2 mb-lg-5"><img class="post-avatar" src="{% static "Ask/img/no_avatar.png" %}" alt=""></div>
                 <div class="post-rate">
                     <span class="mr-1">5</span>
                     <i class="fa fa-plus mr-1" aria-hidden="true"></i>
@@ -35,9 +35,9 @@
                 </div>
             </div>
         </div>
-        <div class="row post pl-0">
+        <div class="row post border">
             <div class="col-8 col-lg-2">
-                <div class="mb-2 mb-lg-5"><img class="post-avatar" src="{% static "img/no_avatar.png" %}" alt=""></div>
+                <div class="mb-2 mb-lg-5"><img class="post-avatar" src="{% static "Ask/img/no_avatar.png" %}" alt=""></div>
                 <div class="post-rate">
                     <span class="mr-1">5</span>
                     <i class="fa fa-plus mr-1" aria-hidden="true"></i>
@@ -59,9 +59,9 @@
                 </div>
             </div>
         </div>
-        <div class="row post pl-0">
+        <div class="row post border">
             <div class="col-8 col-lg-2">
-                <div class="mb-2 mb-lg-5"><img class="post-avatar" src="{% static "img/no_avatar.png" %}" alt=""></div>
+                <div class="mb-2 mb-lg-5"><img class="post-avatar" src="{% static "Ask/img/no_avatar.png" %}" alt=""></div>
                 <div class="post-rate">
                     <span class="mr-1">5</span>
                     <i class="fa fa-plus mr-1" aria-hidden="true"></i>
@@ -84,7 +84,7 @@
             </div>
         </div>
     </div>
-    <nav aria-label="Page navigation example" class="ml-2">
+    <nav aria-label="Page navigation example">
         <ul class="pagination">
             <li class="page-item"><a class="page-link" href="#">1</a></li>
             <li class="page-item"><a class="page-link" href="#">2</a></li>

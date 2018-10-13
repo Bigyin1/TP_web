@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block styles %}
-    <link rel="stylesheet" href="{% static 'css/question_details.css' %}">
+    <link rel="stylesheet" href="{% static 'Ask/css/question_details.css' %}">
 {% endblock %}
 
 {% block content %}
     <div class="container mr-2 pr-3">
         <div class="row details-post pb-3 border-bottom">
             <div class="col-8 col-lg-2">
-                <div class="mb-2 mb-lg-3"><img class="details-post-avatar" src="{% static "img/no_avatar.png" %}"
+                <div class="mb-2 mb-lg-3"><img class="details-post-avatar" src="{% static "Ask/img/no_avatar.png" %}"
                                                alt=""></div>
                 <div class="details-post-rate">
                     <span class="mr-1">5</span>
@@ -19,14 +19,14 @@
             </div>
             <div class="col-12 col-lg-8">
                 <h3>How to build a moon park ?</h3>
-                <div class="deatils-post-text d-none d-md-block">
+                <div class="deatils-post-text">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorum eum ipsum molestias,
                     mollitia nisi non pariatur praesentium quasi quidem reiciendis saepe, vitae voluptatem! Alias at
                     beatae, corporis deserunt, distinctio dolorem doloremque earum esse est maiores quibusdam ratione,
                     ullam velit!
                 </div>
                 <div class="details-post-bottom mt-2">
-                    <div class="details-post-bottom-tags d-inline-block">
+                    <div class="details-post-bottom-tags">
                         <span>Tags:</span>
                         <a class="tag" href="">black-jack</a>
                         <a class="tag" href="">bender</a>
@@ -37,7 +37,7 @@
         <div class="row details-post-comment">
             <div class="col-8 col-lg-2">
                 <div class="mb-2 mb-lg-3"><img class="details-post-comment-avatar"
-                                               src="{% static "img/no_avatar.png" %}"
+                                               src="{% static "Ask/img/no_avatar.png" %}"
                                                alt=""></div>
                 <div class="details-post-rate">
                     <span class="mr-1">5</span>
@@ -51,7 +51,7 @@
                     mollitia nisi non pariatur praesentium quasi quidem reiciendis saepe, vitae voluptatem! Alias at
                 </div>
                 <div class="details-post-bottom mt-2">
-                    <div class="details-post-bottom-tags d-inline-block">
+                    <div class="details-post-bottom-tags">
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Correct!</label>
@@ -63,7 +63,7 @@
         <div class="row details-post-comment">
             <div class="col-8 col-lg-2">
                 <div class="mb-2 mb-lg-3"><img class="details-post-comment-avatar"
-                                               src="{% static "img/no_avatar.png" %}"
+                                               src="{% static "Ask/img/no_avatar.png" %}"
                                                alt=""></div>
                 <div class="details-post-rate">
                     <span class="mr-1">5</span>
@@ -72,12 +72,12 @@
                 </div>
             </div>
             <div class="col-12 col-lg-8">
-                <div class="deatils-post-text d-md-block">
+                <div class="deatils-post-text">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorum eum ipsum molestias,
                     mollitia nisi non pariatur praesentium quasi quidem reiciendis saepe, vitae voluptatem! Alias at
                 </div>
                 <div class="details-post-bottom mt-2">
-                    <div class="details-post-bottom-tags d-inline-block">
+                    <div class="details-post-bottom-tags">
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Correct!</label>
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <form class="mt-4 pt-4 pb-4 border-top" action="#" method="post">
+        <form class="detail-post-comment-form border-top" action="#" method="post">
             <div class="form-group row">
                 <div class="col-sm-12">
                     <textarea rows="3" placeholder="Enter your answer here" type="password" class="form-control"

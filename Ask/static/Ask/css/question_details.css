@@ -19,3 +19,8 @@
     height: 65px;
     border-radius: 10%;
 }
+
+.detail-post-comment-form{
+    margin-bottom: 25px;
+    padding-top: 15px;
+}
