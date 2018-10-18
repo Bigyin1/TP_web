@@ -7,12 +7,12 @@
 
 {% block content %}
     <div class="feed-top">
-        <span class="mr-5">New questions</span>
-        <a class="d-inline-block" href="{% url "hot" %}">Hot questions</a>
+        <span class="mr-2">Tag:</span>
+        <span>bender</span>
     </div>
     <div class="container ">
     {% for question in questions %}
-        <div class="row border post">
+        <div class="row post border">
             <div class="col-8 col-lg-2">
                 <div class="mb-2 mb-lg-5"><img class="post-avatar" src="{% static "Ask/img/no_avatar.png" %}" alt=""></div>
                 <div class="post-rate">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
+    {% endfor %}
     </div>
     <nav aria-label="Page navigation example">
         <ul class="pagination">

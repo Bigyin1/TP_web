@@ -11,10 +11,11 @@
             <span>Log In</span>
         </div>
         <form class="add-form mt-4" action="#" method="post">
+            {% csrf_token %}
             <div class="form-group row">
                 <label for="Title" class="col-sm-2 col-form-label">Login</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control is-invalid" id="Title">
+                    <input type="text" class="form-control is-invalid" id="Title" required>
                     <div class="invalid-feedback">
                         Invalid login!
                     </div>
@@ -23,7 +24,7 @@
             <div class="form-group row">
                 <label for="Text" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-5">
-                    <input type="password" class="form-control is-invalid" id="Text">
+                    <input type="password" class="form-control is-invalid" id="Text" required>
                     <div class="invalid-feedback">
                         Invalid password!
                     </div>
@@ -33,7 +34,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-5">
                     <input type="submit" value="Log In!" class="btn btn-success">
-                    <a class="d-block mt-4" href="#">Create new account</a>
+                    <a class="d-block mt-4" href="/signup">Create new account</a>
                 </div>
             </div>
         </form>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% load static %}
-{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,8 +14,9 @@
 <body>
 
 {% include 'navbar.html' %}
+
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
         <div class="col-8 col-md-8 offset-md-1 content">
             {% block content %}
 

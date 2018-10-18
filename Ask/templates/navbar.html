@@ -1,9 +1,8 @@
 {% load static %}
-{% load staticfiles %}
 
     <nav class="navbar navbar-expand-lg navbar-light border-bottom">
 
-        <a class="navbar-brand" href="/">AskAparin</a>
+        <a class="navbar-brand" href="{% url "main" %}">AskAparin</a>
         <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar"
                 aria-expanded="false" aria-controls="navbar">
             <span class="navbar-toggler-icon"></span>
@@ -22,10 +21,12 @@
                         <div class="nav-user-info">
                             <div class="user-name">Dr.Pepper</div>
                             <div class="user-activ mt-2">
-                                <a class="mr-2" href="#">settings</a>
+                                <a class="mr-2" href="{% url 'profile' %}">settings</a>
                                 <a href="#">log out</a>
                             </div>
                         </div>
+{#                        <a href="/login">Login</a>#}
+{#                        <a class="ml-5" href="/signup">Signup</a>#}
                     </div>
                 </li>
             </ul>

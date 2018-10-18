@@ -28,12 +28,13 @@
                 <div class="details-post-bottom mt-2">
                     <div class="details-post-bottom-tags">
                         <span>Tags:</span>
-                        <a class="tag" href="">black-jack</a>
-                        <a class="tag" href="">bender</a>
+                         <a class="tag" href="{% url "tag" "black-jack" %}">black-jack</a>
+                         <a class="tag" href="{% url "tag" "bender" %}">bender</a>
                     </div>
                 </div>
             </div>
         </div>
+        {% for comment in comments %}
         <div class="row details-post-comment">
             <div class="col-8 col-lg-2">
                 <div class="mb-2 mb-lg-3"><img class="details-post-comment-avatar"
@@ -47,8 +48,7 @@
             </div>
             <div class="col-12 col-lg-8">
                 <div class="deatils-post-text d-md-block">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorum eum ipsum molestias,
-                    mollitia nisi non pariatur praesentium quasi quidem reiciendis saepe, vitae voluptatem! Alias at
+                    {{ comment.text }}
                 </div>
                 <div class="details-post-bottom mt-2">
                     <div class="details-post-bottom-tags">
@@ -60,32 +60,7 @@
                 </div>
             </div>
         </div>
-        <div class="row details-post-comment">
-            <div class="col-8 col-lg-2">
-                <div class="mb-2 mb-lg-3"><img class="details-post-comment-avatar"
-                                               src="{% static "Ask/img/no_avatar.png" %}"
-                                               alt=""></div>
-                <div class="details-post-rate">
-                    <span class="mr-1">5</span>
-                    <i class="fa fa-plus mr-1" aria-hidden="true"></i>
-                    <i class="fa fa-minus" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="col-12 col-lg-8">
-                <div class="deatils-post-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorum eum ipsum molestias,
-                    mollitia nisi non pariatur praesentium quasi quidem reiciendis saepe, vitae voluptatem! Alias at
-                </div>
-                <div class="details-post-bottom mt-2">
-                    <div class="details-post-bottom-tags">
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Correct!</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
         <form class="detail-post-comment-form border-top" action="#" method="post">
             <div class="form-group row">
                 <div class="col-sm-12">
