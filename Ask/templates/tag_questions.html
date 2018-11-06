@@ -8,30 +8,31 @@
 {% block content %}
     <div class="feed-top">
         <span class="mr-2">Tag:</span>
-        <span>bender</span>
+        <span>{{ tag }}</span>
     </div>
     <div class="container ">
     {% for question in questions %}
         <div class="row post border">
             <div class="col-8 col-lg-2">
-                <div class="mb-2 mb-lg-5"><img class="post-avatar" src="{% static "Ask/img/no_avatar.png" %}" alt=""></div>
+                <div class="mb-2 mb-lg-5"><img class="post-avatar" src={{question.author.avatar.url}} alt=""></div>
                 <div class="post-rate">
-                    <span class="mr-1">5</span>
+                    <span class="mr-1">{{ question.rate }}</span>
                     <i class="fa fa-plus mr-1" aria-hidden="true"></i>
                     <i class="fa fa-minus" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="col-12 col-lg-10">
-                <h3><a href="{% url "question" question.id %}">{{ question.title }}</a></h3>
+                <h3><a href="{% url "question" question.pk %}">{{ question.title }}</a></h3>
                 <div class="post-short-description d-none d-md-block">
                     {{ question.text }}
                 </div>
                 <div class="post-bottom mt-2">
-                    <a class="mr-5" href="#">answer(3)</a>
+                    <a class="mr-5" href="#">answer({{ question.answer_set.count }})</a>
                     <div class="post-bottom-tags d-inline-block">
                         <span>Tags:</span>
-                        <a class="tag" href="{% url "tag" "black-jack" %}">black-jack</a>
-                        <a class="tag" href="{% url "tag" "bender" %}">bender</a>
+                        {% for tag in question.tags.all %}
+                            <a class="tag" href="{% url "tag" tag %}">{{ tag }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -40,14 +41,14 @@
     </div>
     <nav aria-label="Page navigation example">
         <ul class="pagination">
-            {% if questions.has_previous %}
+            {% if page_obj.has_previous %}
                 <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
-                <li class="page-item"><a class="page-link" href="?page={{ questions.previous_page_number }}">back</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">back</a></li>
             {% endif %}
-            <li class="page-item active"><a class="page-link" href="?page={{ questions.number }}">{{ questions.number }}</a></li>
-            {% if questions.has_next %}
-                <li class="page-item"><a class="page-link" href="?page={{ questions.next_page_number }}">next</a></li>
-                <li class="page-item"><a class="page-link" href="?page={{ questions.paginator.num_pages }}">{{ questions.paginator.num_pages }}</a></li>
+            <li class="page-item active"><a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
+            {% if page_obj.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
             {% endif %}
         </ul>
     </nav>

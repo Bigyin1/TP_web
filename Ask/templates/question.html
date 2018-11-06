@@ -9,46 +9,44 @@
     <div class="container mr-2 pr-3">
         <div class="row details-post pb-3 border-bottom">
             <div class="col-8 col-lg-2">
-                <div class="mb-2 mb-lg-3"><img class="details-post-avatar" src="{% static "Ask/img/no_avatar.png" %}"
-                                               alt=""></div>
+                <div class="mb-2 mb-lg-3"><img class="details-post-avatar" src={{question.author.avatar.url}}
+                                               ></div>
                 <div class="details-post-rate">
-                    <span class="mr-1">5</span>
+                    <span class="mr-1">{{ question.rate }}</span>
                     <i class="fa fa-plus mr-1" aria-hidden="true"></i>
                     <i class="fa fa-minus" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="col-12 col-lg-8">
-                <h3>How to build a moon park ?</h3>
+                <h3>{{ question.title }}</h3>
                 <div class="deatils-post-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorum eum ipsum molestias,
-                    mollitia nisi non pariatur praesentium quasi quidem reiciendis saepe, vitae voluptatem! Alias at
-                    beatae, corporis deserunt, distinctio dolorem doloremque earum esse est maiores quibusdam ratione,
-                    ullam velit!
+                   {{ question.text }}
                 </div>
                 <div class="details-post-bottom mt-2">
                     <div class="details-post-bottom-tags">
                         <span>Tags:</span>
-                         <a class="tag" href="{% url "tag" "black-jack" %}">black-jack</a>
-                         <a class="tag" href="{% url "tag" "bender" %}">bender</a>
+                        {% for tag in question.tags.all %}
+                            <a class="tag" href="{% url "tag" tag %}">{{ tag }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
-        {% for comment in comments %}
+        {% for answer in question.answer_set.all %}
         <div class="row details-post-comment">
             <div class="col-8 col-lg-2">
                 <div class="mb-2 mb-lg-3"><img class="details-post-comment-avatar"
-                                               src="{% static "Ask/img/no_avatar.png" %}"
+                                               src={{answer.author.avatar.url}}
                                                alt=""></div>
                 <div class="details-post-rate">
-                    <span class="mr-1">5</span>
+                    <span class="mr-1">{{ answer.rate }}</span>
                     <i class="fa fa-plus mr-1" aria-hidden="true"></i>
                     <i class="fa fa-minus" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="col-12 col-lg-8">
                 <div class="deatils-post-text d-md-block">
-                    {{ comment.text }}
+                    {{ answer.text }}
                 </div>
                 <div class="details-post-bottom mt-2">
                     <div class="details-post-bottom-tags">
