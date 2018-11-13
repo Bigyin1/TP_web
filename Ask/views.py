@@ -14,7 +14,7 @@ def paginator(request, query):
 class FeedView(ListView):
     paginate_by = 3
     model = Question
-    ordering = "date"
+    ordering = ["-date"]
     template_name = "feed.html"
 
 
@@ -26,7 +26,8 @@ class QuestionView(DetailView):
 class HotQuestionsView(ListView):
     paginate_by = 3
     model = Question
-    ordering = "rate"
+
+    ordering = ["-rate"]
     template_name = "feed.html"
 
 

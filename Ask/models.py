@@ -9,7 +9,6 @@ from django.utils import timezone
 
 class User(AbstractUser):
     avatar = models.ImageField(default="Ask/img/no_avatar.png", upload_to='uploads/%Y/%m/%d/')
-    registerDate = models.DateTimeField(default=timezone.now, verbose_name="Profile created")
 
     objects = UserManager()
 
@@ -18,7 +17,7 @@ class User(AbstractUser):
 
 
 class Tag(models.Model):
-    title = models.CharField(verbose_name="Tag", max_length=25)
+    title = models.CharField(unique=True, verbose_name="Tag", max_length=25)
     objects = TagManager()
 
     def __str__(self):
@@ -54,7 +53,7 @@ class Question(models.Model):
     text = models.TextField(verbose_name='Question full text')
     tags = models.ManyToManyField(Tag, related_name='questions', blank=True, verbose_name='Tags')
     votes = GenericRelation(LikeDislike, related_query_name='questions')
-    rate = models.IntegerField(default=0, null=False, verbose_name='Rate')
+    rate = models.IntegerField(default=0, verbose_name='Rate')
 
     objects = QuestionManager()
 
@@ -68,7 +67,7 @@ class Answer(models.Model):
     text = models.TextField(verbose_name='Answer full text')
     question = models.ForeignKey(Question, null=False, verbose_name="Question", on_delete=models.CASCADE)
     votes = GenericRelation(LikeDislike, related_query_name='answers')
-    rate = models.IntegerField(default=0, null=False, verbose_name='Rate')
+    rate = models.IntegerField(default=0, verbose_name='Rate')
 
     objects = AnswerManager()
 
