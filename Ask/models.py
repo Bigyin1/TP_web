@@ -52,7 +52,7 @@ class Question(models.Model):
     title = models.CharField(max_length=70, verbose_name='Question Title')
     text = models.TextField(verbose_name='Question full text')
     tags = models.ManyToManyField(Tag, related_name='questions', blank=True, verbose_name='Tags')
-    votes = GenericRelation(LikeDislike, related_query_name='questions')
+    votes = GenericRelation(LikeDislike, related_query_name='question')
     rate = models.IntegerField(default=0, verbose_name='Rate')
 
     objects = QuestionManager()
@@ -66,7 +66,7 @@ class Answer(models.Model):
     title = models.CharField(max_length=70, verbose_name='Answer Title')
     text = models.TextField(verbose_name='Answer full text')
     question = models.ForeignKey(Question, null=False, verbose_name="Question", on_delete=models.CASCADE)
-    votes = GenericRelation(LikeDislike, related_query_name='answers')
+    votes = GenericRelation(LikeDislike, related_query_name='answer')
     rate = models.IntegerField(default=0, verbose_name='Rate')
 
     objects = AnswerManager()

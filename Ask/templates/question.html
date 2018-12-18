@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load widget_tweaks %}
 {% block styles %}
     <link rel="stylesheet" href="{% static 'Ask/css/question_details.css' %}">
 {% endblock %}
@@ -36,8 +36,7 @@
         <div class="row details-post-comment">
             <div class="col-8 col-lg-2">
                 <div class="mb-2 mb-lg-3"><img class="details-post-comment-avatar"
-                                               src={{answer.author.avatar.url}}
-                                               alt=""></div>
+                                               src={{answer.author.avatar.url}}></div>
                 <div class="details-post-rate">
                     <span class="mr-1">{{ answer.rate }}</span>
                     <i class="fa fa-plus mr-1" aria-hidden="true"></i>
@@ -60,10 +59,10 @@
         </div>
         {% endfor %}
         <form class="detail-post-comment-form border-top" action="#" method="post">
+            {% csrf_token %}
             <div class="form-group row">
                 <div class="col-sm-12">
-                    <textarea rows="3" placeholder="Enter your answer here" type="password" class="form-control"
-                              id="Text"></textarea>
+                    {% render_field form.text type="textarea" rows='5' class+="form-control" %}
                 </div>
             </div>
             <div class="form-group row">

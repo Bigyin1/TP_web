@@ -45,6 +45,7 @@ class Command(BaseCommand):
             self.create_answers()
         else:
             self.answers = Answer.objects.all()
+        LikeDislike.objects.all().delete()
         if LikeDislike.objects.count() < likeCount:
             print('creating likes')
             self.create_likes()
@@ -96,20 +97,20 @@ class Command(BaseCommand):
     def create_likes(self):
         i = 0
         LikeDislike.objects.all().delete()
-        while LikeDislike.objects.all().count() < likeCount:
-            likes = []
-            for question in self.questions:
-                print(i)
-                i += 1
-                like = LikeDislike(vote=random.choice([-1, 1]), user=random.choice(self.users), content_object=question)
-                likes.append(like)
-            for answer in self.answers:
-                print(i)
-                i += 1
-                like = LikeDislike(vote=random.choice([-1, 1]), user=random.choice(self.users), content_object=answer)
-                likes.append(like)
-            LikeDislike.objects.bulk_create(likes, batch_size=120)
-            for like in likes:
-                like.content_object.rate += like.vote
+        likes = []
+        while len(likes) < likeCount:
+            q_like = LikeDislike(vote=random.choice([-1, 1]), user=random.choice(self.users),
+                                 content_object=random.choice(self.questions))
+            print(i)
+            i += 1
+            a_like = LikeDislike(vote=random.choice([-1, 1]), user=random.choice(self.users),
+                                 content_object=random.choice(self.answers))
+            print(i)
+            i += 1
+            likes.append(a_like)
+            likes.append(q_like)
+        LikeDislike.objects.bulk_create(likes, batch_size=120)
+        for like in likes:
+            like.content_object.rate += like.vote
         bulk_update(self.questions, update_fields=['rate'], batch_size=120)
         bulk_update(self.answers, update_fields=['rate'], batch_size=120)

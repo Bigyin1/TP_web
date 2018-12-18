@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
 {% load static %}
 
 {% block styles %}
@@ -10,56 +11,64 @@
         <div class="settings-form-top">
             <span>Registration</span>
         </div>
-        <form class="add-form mt-4" action="#" method="post">
+        <form class="add-form mt-4" enctype="multipart/form-data" action="#" method="post">
+            {% csrf_token %}
             <div class="form-group row">
-                <label for="Title" class="col-sm-3 col-form-label">Login</label>
+                <label for="Title" class="col-sm-3 col-form-label">First Name</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control is-invalid" id="Title" required>
+                    {% render_field form.first_name|add_error_class:"is-invalid" type="text" class+="form-control" required='True' %}
                     <div class="invalid-feedback">
-                        This Login is already registered.
+                        {{form.first_name.errors}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="Title" class="col-sm-3 col-form-label">Last Name</label>
+                <div class="col-sm-5">
+                    {% render_field form.first_name|add_error_class:"is-invalid" type="text" class+="form-control" required='True' %}
+                    <div class="invalid-feedback">
+                        {{form.last_name.errors}}
                     </div>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="Text" class="col-sm-3 col-form-label">Email</label>
                 <div class="col-sm-5">
-                    <input type="email" class="form-control is-invalid" id="Text" required>
+                    {% render_field form.email|add_error_class:"is-invalid" type="email" class+="form-control" required='True' %}
                     <div class="invalid-feedback">
                         This Email is already registered.
                     </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Tags1" class="col-sm-3 col-form-label">NickName</label>
+                <label for="Tags1" class="col-sm-3 col-form-label">Username</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control is-invalid" id="Tags1" required>
+                    {% render_field form.username|add_error_class:"is-invalid" type="text" class+="form-control" required='True' %}
                     <div class="invalid-feedback">
-                        This NickName is already registered.
+                        {{ form.username.errors }}
                     </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Tags2" class="col-sm-3 col-form-label">Password</label>
+                <label class="col-sm-3 col-form-label">Password</label>
                 <div class="col-sm-5">
-                    <input type="password" class="form-control" id="Tags2" required>
+                    {% render_field form.password type="password" class+="form-control" %}
                 </div>
             </div>
             <div class="form-group row">
                 <label for="Tags3" class="col-sm-3 col-form-label">Repeat Password</label>
                 <div class="col-sm-5">
-                    <input type="password" class="form-control is-invalid" id="Tags3" required>
-                    <div class="invalid-feedback">
-                        Passwords are not identical.
-                    </div>
+                    {% render_field form.repeat_password|add_error_class:"is-invalid" type="password" class+="form-control" %}
+                        <div class="invalid-feedback">
+                            {{ form.repeat_password.errors }}
+                        </div>
                 </div>
             </div>
-
             <div class="form-group row">
                 <label class="col-sm-3" for="exampleFormControlFile1">Upload Avatar</label>
                 <div class="col-sm-5">
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                     {% render_field form.avatar type="file" class+="form-control-file" %}
                 </div>
-
             </div>
             <div class="form-group row">
                 <div class="col-sm-3"></div>
