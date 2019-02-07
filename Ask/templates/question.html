@@ -13,8 +13,8 @@
                                                ></div>
                 <div class="details-post-rate">
                     <span class="mr-1">{{ question.rate }}</span>
-                    <i class="fa fa-plus mr-1" aria-hidden="true"></i>
-                    <i class="fa fa-minus" aria-hidden="true"></i>
+                    <i data-pk="{{question.id}}" data-type="question" class="fa fa-plus mr-1" aria-hidden="true"></i>
+                    <i data-pk="{{question.id}}" data-type="question" class="fa fa-minus" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="col-12 col-lg-8">
@@ -39,12 +39,12 @@
                                                src={{answer.author.avatar.url}}></div>
                 <div class="details-post-rate">
                     <span class="mr-1">{{ answer.rate }}</span>
-                    <i class="fa fa-plus mr-1" aria-hidden="true"></i>
-                    <i class="fa fa-minus" aria-hidden="true"></i>
+                    <i data-pk="{{answer.id}}" data-type="answer" class="fa fa-plus mr-1" aria-hidden="true"></i>
+                    <i data-pk="{{answer.id}}" data-type="answer" class="fa fa-minus" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="col-12 col-lg-8">
-                <div class="deatils-post-text d-md-block">
+                <div class="details-post-text d-md-block">
                     {{ answer.text }}
                 </div>
                 <div class="details-post-bottom mt-2">

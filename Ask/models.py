@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericRelation
 from django.contrib.contenttypes.fields import GenericForeignKey
+from django.db.models import signals
+from django.dispatch import receiver
 from django.utils import timezone
 
 
@@ -44,6 +46,18 @@ class LikeDislike(models.Model):
 
     def __str__(self):
         return self.user.username + " liked"
+
+# doesn't work??
+# @receiver(signals.pre_save, sender=LikeDislike)
+# def add_score(instance, **kwargs):
+#     instance.content_object.rate += instance.vote
+#     instance.content_object.save()
+
+
+@receiver(signals.pre_delete, sender=LikeDislike)
+def add_score(instance, **kwargs):
+    instance.content_object.rate -= instance.vote
+    instance.content_object.save()
 
 
 class Question(models.Model):

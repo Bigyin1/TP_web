@@ -17,8 +17,8 @@
                 <div class="mb-2 mb-lg-5"><img class="post-avatar" src={{question.author.avatar.url}} ></div>
                 <div class="post-rate">
                     <span class="mr-1">{{ question.rate }}</span>
-                    <i class="fa fa-plus mr-1" aria-hidden="true"></i>
-                    <i class="fa fa-minus" aria-hidden="true"></i>
+                    <i data-pk="{{question.id}}" data-type="question" class="fa fa-plus mr-1" aria-hidden="true"></i>
+                    <i data-pk="{{question.id}}" data-type="question" class="fa fa-minus" aria-hidden="true"></i>
                 </div>
             </div>
             <div class="col-12 col-lg-10">

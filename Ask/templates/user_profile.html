@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load widget_tweaks %}
 {% block styles %}
     <link rel="stylesheet" href="{% static 'Ask/css/user_profile.css' %}">
 {% endblock %}
@@ -11,30 +11,32 @@
             <span class="m">Settings:</span>
             <span>Dr.Pepper</span>
         </div>
-        <form class="add-form mt-4" action="#" method="post">
+        <form class="add-form mt-4" action="#" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
             <div class="form-group row">
                 <label for="Title" class="col-sm-2 col-form-label">Login</label>
                 <div class="col-sm-5">
-                    <input value="Bigyin" type="text" class="form-control" id="Title">
+                    {% render_field form.username|add_error_class:"is-invalid" type="text" class+="form-control" %}
+                    <div class="invalid-feedback">
+                        {{form.username.errors}}
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="Text" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-5">
-                    <input value="baz@html.ru" type="email" class="form-control" id="Text">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="Tags" class="col-sm-2 col-form-label">NickName</label>
-                <div class="col-sm-5">
-                    <input value="Dr.Pepper" type="text" class="form-control" id="Tags">
+                    {% render_field form.email|add_error_class:"is-invalid" type="text" class+="form-control" %}
+                    <div class="invalid-feedback">
+                        {{form.email.errors}}
+                    </div>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2" for="exampleFormControlFile1">Upload Avatar</label>
                 <div class="col-sm-5">
-                    <img class="settings-form-avatar" src="{% static "Ask/img/no_avatar.png" %}" alt="">
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <img class="avatar" src={{ user.avatar.url }}>
+{#                    {% render_field form.avatar type="file" class+="form-control-file" %}#}
+                    <input type="file" class="form-control-file mt-2" accept="image/*" name="avatar">
                 </div>
 
             </div>

@@ -21,7 +21,7 @@
                         <div class="nav-user-info">
                             <div class="user-name">{{ user.username }}</div>
                             <div class="user-activ mt-2">
-                                <a class="mr-2" href={% url 'profile' %}>settings</a>
+                                <a class="mr-2" href={% url 'profile' user.pk %}>settings</a>
                                 <a href={% url 'signout' %}>log out</a>
                             </div>
                         </div>
